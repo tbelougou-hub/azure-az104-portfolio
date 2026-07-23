@@ -17,6 +17,7 @@ group directly with
 the Azure CLI
 
 ## Key commands / concepts used
+Policy rule JSON
 {
     "policyRule": {
         "if": {
@@ -29,8 +30,8 @@ the Azure CLI
     },
     "parameters": {}
 }
-To create a policy 
 
+CLI commands
 az group update --name rg-lab-day2 --tags CostCenter=Test
 Owner=Beltis
 az group show --name rg-lab-day2 --query tags
