@@ -1,6 +1,6 @@
 # Day 02 –  Identity & Governance II (Policy, Locks, Tags)
 
-**Exam domain:** [Identity & Governance / Storage / Compute / Networking / Monitoring]
+**Exam domain:** Identity & Governance
 **Date completed:07/21/2026**
 
 ## What I built
