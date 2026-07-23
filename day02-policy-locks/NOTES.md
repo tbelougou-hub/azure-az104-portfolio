@@ -17,7 +17,7 @@ group directly with
 the Azure CLI
 
 ## Key commands / concepts used
-({
+{
     "policyRule": {
         "if": {
             "field": "tags['CostCenter']",
@@ -28,7 +28,7 @@ the Azure CLI
         }
     },
     "parameters": {}
-})
+}
 To create a policy 
 
 az group update --name rg-lab-day2 --tags CostCenter=Test
