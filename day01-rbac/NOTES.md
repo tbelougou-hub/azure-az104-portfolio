@@ -1,7 +1,7 @@
 # Day 01 – Identity & Governance I (RBAC)
 
-**Exam domain:** [Identity & Governance / Storage / Compute / Networking / Monitoring]
-**Date completed:**
+**Exam domain:** Identity & Governance
+**Date completed:20/07/2026**
 
 ## What I built
 - I created two Microsoft Entra ID test users (testuser1, testuser2) and added both to a new security group (TestAdmins).
