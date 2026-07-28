@@ -1,7 +1,7 @@
 # Day 04 – Storage II (Files, AzCopy)
 
 **Exam domain:** Storage
-**Date completed:**27/07/2026
+**Date completed:** 07/26/2026
 
 ## What I built
 Created a Standard-performance storage account and a classic (SMB) file share, deliberately
@@ -11,11 +11,11 @@ tests port 445 connectivity before mounting. Installed AzCopy and used it with a
 container-scoped SAS token to transfer a local file directly into Blob Storage over HTTPS,
 without ever using the storage account key.
 
-
 ## Key commands / concepts used
 winget install Microsoft.AzCopy
 azcopy --version
 azcopy copy "<local-file-path>" "<destination-blob-SAS-URL>"
+
 ## Troubleshooting log
 1. **`Microsoft.FileShares` NFS trap:** searching "file shares" in the portal search bar
    surfaced Azure's newer standalone file share resource type, which only supports NFS and
@@ -32,16 +32,24 @@ azcopy copy "<local-file-path>" "<destination-blob-SAS-URL>"
    `DestinationHostUnreachable` — my home ISP blocks outbound SMB by default. Confirmed
    independently with `Test-NetConnection`. Worked around it via AzCopy, which uses HTTPS
    (443) instead of SMB.
+5. **"Primary service" storage account trap:** selecting "Azure Files" as the Primary
+   service during storage account creation produces a `FileStorage`-kind account that only
+   supports file shares — no Containers blade at all. Had to create a second
+   general-purpose storage account with "Azure Blob Storage" selected as Primary service to
+   get Containers for the AzCopy step.
+
 ## What I learned / what surprised me
 Azure's newer `Microsoft.FileShares` resource type only supports NFS and skips creating a
 storage account entirely — the correct path for SMB is Standard storage account → Classic
 file shares. My home network blocks SMB outbound, which is common and unrelated to Azure
 configuration. AzCopy sidesteps this by authenticating over HTTPS with a SAS token instead
-of mounting a share, so the transfer succeeded even without a mounted drive.
+of mounting a share, so the transfer succeeded even without a mounted drive. A storage
+account's "Primary service" selection isn't just guidance — it actually restricts which
+data services (blob vs. file) are available afterward.
 
 ## Screenshots
-![Resource group + storage account created] 01-storage-account-standard.png
-![Classic (SMB) file share created] 02-classic-file-share-smb.png
-![SMB connectivity test] 03-smb-connection-test.png
-![AzCopy installation] 04-azcopy-installed.png
-![container, SAS and file transfer] 05-azcopy-transfer-completed.png
+![Resource group + storage account created](screenshots/01-storage-account-standard.png)
+![Classic (SMB) file share created](screenshots/02-classic-file-share-smb.png)
+![SMB connectivity test](screenshots/03-smb-connection-test.png)
+![AzCopy installation](screenshots/04-azcopy-installed.png)
+![Container, SAS, and file transfer](screenshots/05-azcopy-transfer-completed.png)
