@@ -1,7 +1,7 @@
 # Day 03 – 	Storage	I	(Accounts	&	Blob)
 
 **Exam domain:** Storage
-**07/22/2026:**
+**Date completed:07/22/2026:**
 
 ## What I built
 Created	a	storage	account	with LRS redundancy	and	a private	blob	
@@ -21,8 +21,7 @@ menu	>	Generate	SAS	>	Generate	SAS	token	and	URL	Storage	account >	Lifecycle	man
 
 ## What I learned / what surprised me
 SAS	tokens	are	permission-scoped	at	generation	time	—	removing	the	
-Read	permission	and
-regenerating	the	token	immediately	revoked	that	access,	which	is	a	
+Read	permission and mregenerating	the	token	immediately	revoked	that	access,	which	is	a	
 much	finer-grained
 control	than	just	making	the	whole	container	public	or	private.
 
