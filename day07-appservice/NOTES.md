@@ -13,5 +13,5 @@ Portal paths used: Web App > Pricing plan > Dev/Test tab > F1 Free Container Ins
 App Service's Free (F1) tier is genuinely $0 and is a fast way to get a web app publicly reachable without managing a VM. Container Instances bill per second while running, so they're good for quick tests but need to be deleted immediately after — unlike App Service Free tier, which has no running cost at all.
 
 ## Screenshots
-!01-webapp-live.png
-!02-container-instance.png
+![Web app live](screenshots/01-webapp-live.png)
+![Container instance](screenshots/02-container-instance.png)
