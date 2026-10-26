@@ -78,6 +78,6 @@ az network lb rule create \
 
 
 ## Screenshots
-![Load Balancer Configuration CLI](01-lb-configuration.png)
-![Load Balancer Configuration az portal](02-load-lb-config-az-portal.png)
-![Round Robin Proof](03-round-robin-proof.png)
+![Load Balancer Configuration CLI](screenshots/01-lb-configuration.png)
+![Load Balancer Configuration az portal](screenshots/02-load-lb-config-az-portal.png)
+![Round Robin Proof](screenshots/03-round-robin-proof.png)
